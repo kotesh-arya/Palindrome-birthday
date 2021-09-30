@@ -164,7 +164,7 @@ function getNextPalindromeDate(date) {
 
 var dateEntry = document.querySelector("#birthday");
 var showButton = document.querySelector("#show-button");
-var resultRef = document.querySelector("message");
+var resultRef = document.querySelector("#message");
 
 
 function clickHandler() {
@@ -178,16 +178,14 @@ function clickHandler() {
             month: Number(listOfDate[1]),
             year: Number(listOfDate[0])
         }
-     var isPalindrome = checkPalindromeForAllFormats(date);
-      if(isPalindrome){
-        resultRef.innerText = "hi ";
-      }else{
-        resultRef.innerText = "alternative";
-      }
+        var isPalindrome = checkPalindromeForAllFormats(date);
+        if (isPalindrome) {
+            resultRef.innerText = " Great! that is a unique palindrome! ";
+        } else {
+            var [counter, nextDate] = getNextPalindromeDate(date);
+            resultRef.innerText = ` Sorry! The next palindrome is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed it by ${counter} days😐`;
+        }
 
-    }
-    else{
-      resultRef.innerText = "working case";
     }
 }
 

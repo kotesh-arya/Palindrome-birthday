@@ -186,6 +186,8 @@ function clickHandler() {
             resultRef.innerText = ` Sorry! The next palindrome is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed it by ${counter} days😐`;
         }
 
+    }else{
+        resultRef.innerText = "Please provide a valid date"
     }
 }
 
